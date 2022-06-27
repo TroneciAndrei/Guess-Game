@@ -37,12 +37,12 @@ btnCheck.addEventListener('click', () => {
     displayMessage('💥 You lost the game!');
 
     setTimeout(() => {
-      startagain();
+      startGame();
     }, 2000);
   }
 });
 
-function startagain() {
+function startGame() {
   score = 20;
   secretNumber = Math.trunc(Math.random() * 100) + 1;
 
@@ -56,6 +56,4 @@ function startagain() {
   document.querySelector('.number').style.width = '15rem';
 }
 
-again.addEventListener('click', () => {
-  startagain();
-});
+again.addEventListener('click', startGame);
