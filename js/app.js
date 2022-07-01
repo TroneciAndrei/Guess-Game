@@ -10,13 +10,15 @@ const message = document.querySelector('.message');
 const again = document.querySelector('.again');
 const scoreEl = document.querySelector('.score');
 const highScoreEl = document.querySelector('.highscore');
+const form = document.querySelector('#form');
 
 function displayMessage(message) {
   const messageEl = document.querySelector('.message');
   messageEl.textContent = message;
 }
 
-btnCheck.addEventListener('click', () => {
+form.addEventListener('submit', (event) => {
+  event.preventDefault();
   const guess = Number(document.querySelector('.guess').value);
   if (!guess) {
     displayMessage('⛔️ No number!');
